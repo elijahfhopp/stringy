@@ -21,7 +21,7 @@ It's header-only, too. But, if you need it, it can also be compiled normally (no
 
 Here is an example that can be tried out yourself by compiling the `example.cpp` file:
 
-```
+```C++
 #include "stringy.hpp"
 
 #include <iostream>
