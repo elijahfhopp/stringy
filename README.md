@@ -1,6 +1,6 @@
-# Stringy for C++
+# `stringy` for C++
 
-Stringy makes string sanitization simple:
+`stringy` makes string sanitization simple:
 
 ```C++
 #include <stringy/stringy.hpp>

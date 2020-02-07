@@ -1,5 +1,7 @@
 #include <string>
-#include <cstring>
+
+#ifndef STRINGY_HPP_
+#define STRINGY_HPP_
 
 namespace stringy {
 
@@ -312,3 +314,5 @@ std::string make_printsafe(const char * input_str, int string_length){
 }
 
 } //stringy
+
+#endif //STRINGY_HPP_
