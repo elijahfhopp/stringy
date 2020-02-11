@@ -1,5 +1,4 @@
 #include <string>
-#include <cstring>
 
 namespace stringy {
 
@@ -11,5 +10,6 @@ std::string make_hex_string(const char * input_str, int string_length);
 
 std::string make_printsafe(const char * input_str);
 std::string make_printsafe(const char * input_str, int string_length);
+std::string make_printsafe(std::string input_str);
 
 } //stringy

@@ -294,6 +294,10 @@ std::string make_hex_string(const char * input_str, int string_length){
     return return_string;
 }
 
+inline std::string make_hex_string(const std::string& input_str){
+    return make_hex_string(input_str.c_str(), input_str.size() - 1);
+}
+
 std::string make_printsafe(const char * input_str){
     std::string return_string;
     int char_str_len = strlen(input_str);
@@ -309,6 +313,10 @@ std::string make_printsafe(const char * input_str, int string_length){
         return_string += printsafe_char(input_str[i]);
     }
     return return_string;
+}
+
+inline std::string make_printsafe(const std::string& input_str){
+    return make_printsafe(input_str.c_str(), input_str.size() - 1);
 }
 
 } // stringy

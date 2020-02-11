@@ -7,7 +7,7 @@ namespace stringy {
 
 #define NUM_CHAR_CODES 256
 
-const char* char_2_hex_map[NUM_CHAR_CODES] = {
+static const char* char_2_hex_map[NUM_CHAR_CODES] = {
     "\\x00",
     "\\x01",
     "\\x02",
@@ -279,7 +279,7 @@ inline std::string printsafe_char(const char unsafe){
     }
 }
 
-std::string make_hex_string(const char * input_str){
+inline std::string make_hex_string(const char * input_str){
     std::string return_string;
     int char_str_len = strlen(input_str);
     for(int i = 0; i < char_str_len; i++){
@@ -288,7 +288,7 @@ std::string make_hex_string(const char * input_str){
     return return_string;
 }
 
-std::string make_hex_string(const char * input_str, int string_length){
+inline std::string make_hex_string(const char * input_str, int string_length){
     std::string return_string;
     for(int i = 0; i <= string_length; i++){
         return_string += hex_char(input_str[i]);
@@ -296,7 +296,11 @@ std::string make_hex_string(const char * input_str, int string_length){
     return return_string;
 }
 
-std::string make_printsafe(const char * input_str){
+inline std::string make_hex_string(const std::string& input_str){
+    return make_hex_string(input_str.c_str(), input_str.size() - 1);
+}
+
+inline std::string make_printsafe(const char * input_str){
     std::string return_string;
     int char_str_len = strlen(input_str);
     for(int i = 0; i < char_str_len; i++){
@@ -305,12 +309,16 @@ std::string make_printsafe(const char * input_str){
     return return_string;
 }
 
-std::string make_printsafe(const char * input_str, int string_length){
+inline std::string make_printsafe(const char * input_str, int string_length){
     std::string return_string;
     for(int i = 0; i <= string_length; i++){
         return_string += printsafe_char(input_str[i]);
     }
     return return_string;
+}
+
+inline std::string make_printsafe(const std::string& input_str){
+    return make_printsafe(input_str.c_str(), input_str.size() - 1);
 }
 
 } //stringy
