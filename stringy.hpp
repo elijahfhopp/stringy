@@ -1,4 +1,5 @@
 #include <string>
+#include <cstring>
 
 #ifndef STRINGY_HPP_
 #define STRINGY_HPP_
@@ -266,6 +267,9 @@ static const char* char_2_hex_map[NUM_CHAR_CODES] = {
     "\\xff"
 };
 
+//----------------------------------------------------------------------------//
+//Some functions for internal use and a very small use-case outside stringy.
+
 inline std::string hex_char(const char unsafe){
     return std::string(char_2_hex_map[static_cast<uint8_t>(unsafe)]); //Uses the char as an int/index.
 }
@@ -278,6 +282,9 @@ inline std::string printsafe_char(const char unsafe){
         return std::string(1, unsafe); //It just becomes safe. Automagically.
     }
 }
+
+//----------------------------------------------------------------------------//
+//Basic escape code string making functions.
 
 inline std::string make_hex_string(const char * input_str){
     std::string return_string;
@@ -299,6 +306,9 @@ inline std::string make_hex_string(const char * input_str, int string_length){
 inline std::string make_hex_string(const std::string& input_str){
     return make_hex_string(input_str.c_str(), input_str.size() - 1);
 }
+
+//----------------------------------------------------------------------------//
+//The real meat. Print-safe ASCII string generators.
 
 inline std::string make_printsafe(const char * input_str){
     std::string return_string;
