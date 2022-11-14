@@ -1,3 +1,7 @@
+> :warning: unmaintained/abandoned, but simple and public domain
+
+> :exclamation: naive approach 
+
 # `stringy` for C++
 
 `stringy` makes string sanitization simple:
